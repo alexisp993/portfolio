@@ -23,11 +23,32 @@ if (introSeen || matchMedia('(prefers-reduced-motion: reduce)').matches) {
 
 const menuButton = document.querySelector('[data-menu]');
 const collapseButton = document.querySelector('[data-collapse]');
+const themeButton = document.querySelector('[data-theme-toggle]');
+const themeLabel = document.querySelector('[data-theme-label]');
+const themeColor = document.querySelector('meta[name="theme-color"]');
 const projectDetail = document.querySelector('[data-project-detail]');
 const projectDetailClose = document.querySelector('[data-project-detail-close]');
 const projectDetailRoute = 'project-financial-overview';
 let lastBaseRoute = routes.includes(location.hash.slice(1).toLowerCase()) ? location.hash.slice(1).toLowerCase() : 'projects';
 let projectDetailTimer;
+
+function applyTheme(theme, persist = true) {
+  const isLight = theme === 'light';
+  document.documentElement.dataset.theme = isLight ? 'light' : 'dark';
+  themeButton?.setAttribute('aria-pressed', String(isLight));
+  themeButton?.setAttribute('aria-label', `Switch to ${isLight ? 'dark' : 'light'} mode`);
+  if (themeLabel) themeLabel.textContent = `${isLight ? 'Dark' : 'Light'} mode`;
+  themeColor?.setAttribute('content', isLight ? '#edf2e9' : '#172621');
+  if (persist) {
+    try { localStorage.setItem('portfolio-theme', isLight ? 'light' : 'dark'); } catch {}
+  }
+  requestAnimationFrame(() => drawFractalBackground?.(performance.now()));
+}
+
+applyTheme(document.documentElement.dataset.theme, false);
+themeButton?.addEventListener('click', () => {
+  applyTheme(document.documentElement.dataset.theme === 'light' ? 'dark' : 'light');
+});
 
 function closeMenu() {
   document.body.classList.remove('menu-open');
