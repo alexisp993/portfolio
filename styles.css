@@ -37,6 +37,13 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round
 .profile img { width: 82px; height: 82px; object-fit: cover; object-position: center 22%; border-radius: 50%; border: 3px solid rgba(242,244,237,.82); }
 .profile h2 { margin: 0 0 4px; font-size: 17px; line-height: 1.15; }
 .profile p { margin: 0; color: var(--soft); font-size: 11px; line-height: 1.4; white-space: nowrap; }
+.profile-socials { display: flex; justify-content: center; gap: 8px; margin-top: 12px; }
+.profile-socials a { display: grid; place-items: center; width: 32px; height: 32px; border: 1px solid var(--line); border-radius: 50%; color: var(--soft); transition: color 160ms var(--ease-out), background-color 160ms var(--ease-out), border-color 160ms var(--ease-out), transform 160ms var(--ease-out); }
+.profile-socials svg { width: 17px; height: 17px; stroke-width: 1.75; }
+.profile-socials a:active { transform: scale(.96); }
+@media (hover: hover) and (pointer: fine) {
+  .profile-socials a:hover { border-color: #65bd91; background: rgba(77,115,76,.24); color: var(--text); transform: translateY(-2px); }
+}
 .sidebar nav { display: grid; gap: 6px; margin-top: 42px; }
 .sidebar nav a, .side-bottom a, .side-bottom button { display: flex; align-items: center; gap: 14px; min-height: 44px; padding: 10px 13px; border: 0; border-radius: 24px; background: transparent; color: var(--soft); cursor: pointer; white-space: nowrap; }
 .sidebar nav a svg, .side-bottom svg { width: 20px; height: 20px; flex: 0 0 20px; }
