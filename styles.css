@@ -164,39 +164,7 @@ main { min-height: 100vh; margin-left: var(--rail); }
 .tool-grid.compact-tools { grid-template-columns: repeat(3, minmax(96px, 1fr)); justify-self: end; width: min(100%, 510px); }
 .tool-grid li { display: grid; place-items: center; align-content: center; gap: 8px; min-height: 96px; padding: 9px 6px; border: 1px solid rgba(74,133,99,.24); border-radius: 13px; background: rgba(4,22,16,.47); text-align: center; }
 .tool-grid li span { font-size: 11px; line-height: 1.25; }
-.tool-mark { display: grid; place-items: center; min-width: 40px; height: 40px; color: #fff; font-size: 13px; font-weight: 800; letter-spacing: -.03em; }
-.tool-mark.powerbi { color: #f2c61f; font-size: 24px; transform: rotate(-90deg); }
-.tool-mark.dax { border-radius: 8px; background: #206c70; }
-.tool-mark.query, .tool-mark.pivot { clip-path: polygon(50% 0,100% 24%,100% 76%,50% 100%,0 76%,0 24%); background: #68ad35; }
-.tool-mark.excel { border-radius: 4px; background: #16844a; font-size: 20px; }
-.tool-mark.sql { border-radius: 50%; background: #3c87df; }
-.tool-mark.python { color: #f3cb45; font-size: 18px; text-shadow: -2px -2px #3479ad; }
-.tool-mark.pandas { color: #e35fc1; font-size: 18px; }
-.tool-mark.numpy { color: #86b7e9; font-size: 17px; }
-.tool-mark.postgres { border-radius: 50%; background: #2d6f9f; }
-.tool-mark.automate { color: #4f95f0; font-size: 37px; }
-.tool-mark.n8n { color: #ef3c7b; font-size: 16px; }
-.tool-mark.zapier { color: #ff5b22; font-size: 38px; }
-.tool-mark.claude { color: #dc8d5e; font-size: 38px; }
-.tool-mark.chatgpt { color: #45d4a0; font-size: 34px; }
-.tool-mark.prompt { border: 2px solid #eef4ec; border-radius: 50%; font-size: 23px; line-height: 1; }
-.tool-mark { color: transparent; font-size: 0; background-image: url("public/assets/portfolio-icon-pack.png"); background-repeat: no-repeat; background-size: 691px 461px; border-radius: 0; clip-path: none; text-shadow: none; transform: none; }
-.tool-mark.powerbi { background-position: -29px -101px; }
-.tool-mark.dax { background-position: -90px -101px; }
-.tool-mark.query { background-position: -151px -101px; }
-.tool-mark.pivot { background-position: -215px -101px; }
-.tool-mark.excel { background-position: -278px -101px; }
-.tool-mark.sql { background-position: -354px -101px; }
-.tool-mark.python { background-position: -417px -101px; }
-.tool-mark.pandas { background-position: -478px -101px; }
-.tool-mark.numpy { background-position: -543px -101px; }
-.tool-mark.postgres { background-position: -611px -101px; }
-.tool-mark.automate { background-position: -29px -227px; }
-.tool-mark.n8n { background-position: -100px -227px; }
-.tool-mark.zapier { background-position: -171px -227px; }
-.tool-mark.claude { background-position: -354px -227px; }
-.tool-mark.chatgpt { background-position: -417px -227px; }
-.tool-mark.prompt { background-position: -478px -227px; }
+.tool-icon { display: block; width: 50px; height: 50px; object-fit: cover; border-radius: 9px; }
 .skills-footer { display: grid; grid-template-columns: 1.15fr .85fr; margin-top: 18px; border: 1px solid rgba(82,146,110,.3); border-radius: 13px; background: rgba(13,42,32,.62); }
 .learning-block, .opportunity-block { display: grid; grid-template-columns: 74px 1fr; gap: 22px; padding: 24px; }
 .opportunity-block { border-left: 1px solid var(--line); }
