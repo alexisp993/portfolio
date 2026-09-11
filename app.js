@@ -83,7 +83,7 @@ const slider = document.querySelector('.hero-slider');
 const slides = [...document.querySelectorAll('[data-project-slide]')];
 const slideButtons = [...document.querySelectorAll('[data-slide]')];
 const slideStatus = document.querySelector('[data-slide-status]');
-const slideNames = ['Financial Overview', 'BookMory — Reading Tracker', 'Ma, Anong Ulam'];
+const slideNames = ['Financial Overview', 'book-tracker', 'Ma, Anong Ulam'];
 let currentSlide = 0;
 let slideTimer;
 
