@@ -2,7 +2,7 @@
 
 Dark botanical editorial portfolio inspired by the supplied mock-up. The experience mode is showcase: the work leads, navigation stays quiet, and project imagery carries the storytelling.
 
-An approachable analytics workspace: compact introduction above an asymmetrical dashboard of portfolio shortcuts, anchored by a personal navigation rail. The reference screenshot supplies the structure while botanical colors create a quieter identity.
+A cinematic analytics portfolio anchored by a personal navigation rail. The Home view follows the reference composition in three horizontal bands: a half-screen project-story banner, a compact three-card Featured Projects row, and a narrow toolkit marquee.
 
 ## Tokens
 
@@ -15,4 +15,4 @@ Five hash-addressable views retain browser history and direct links. Navigation 
 
 ## Content and assets
 
-Portrait origin: user file C:/Users/Personal/Documents/Profile yellow BG.png. Résumé origin: user file C:/Users/Personal/Documents/Alex Pagtakhan - Data Analyst.pdf. Do not alter these originals. Charts are illustrative and must say so. Use consistent stroke SVG icons and geometric data charts.
+Portrait origin: user file C:/Users/Personal/Documents/Profile yellow BG.png. Résumé origin: user file C:/Users/Personal/Documents/Alex Pagtakhan - Data Analyst.pdf. Do not alter these originals. Project screenshots retain recognizable source color beneath a restrained edge vignette. Use consistent stroke SVG icons throughout.
