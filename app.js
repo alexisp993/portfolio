@@ -129,7 +129,15 @@ const projectFilters = [...document.querySelectorAll('[data-project-filter]')];
 const projectSearch = document.querySelector('[data-project-search]');
 const projectEmpty = document.querySelector('[data-project-empty]');
 const projectStatus = document.querySelector('[data-project-status]');
+const toolCards = [...document.querySelectorAll('.tool-grid li')];
 let activeProjectFilter = 'all';
+
+document.querySelectorAll('[data-project-count]').forEach((value) => {
+  value.textContent = String(projectCards.length);
+});
+document.querySelectorAll('[data-tool-count]').forEach((value) => {
+  value.textContent = String(toolCards.length);
+});
 
 function updateProjectResults() {
   const query = projectSearch?.value.trim().toLowerCase() || '';
