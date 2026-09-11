@@ -110,6 +110,28 @@ main { min-height: 100vh; margin-left: var(--rail); }
 .tool-window:hover .tool-track, .tool-window:focus-within .tool-track { animation-play-state: paused; }
 @keyframes marquee { to { transform: translateX(-50%); } }
 
+@media (min-width: 901px) and (min-height: 720px) {
+  .home-view.is-active { display: flex; flex-direction: column; height: 100vh; overflow: hidden; }
+  .home-view .hero-banner { flex: 0 0 clamp(360px, 45vh, 420px); height: auto; min-height: 0; }
+  .home-view .hero-copy { padding-block: 22px; }
+  .home-view .hero-copy h1 { font-size: clamp(46px, 4.5vw, 68px); }
+  .home-view .lede { margin-top: 15px; }
+  .home-view .actions { margin-top: 18px; }
+  .home-view .facts { margin-top: 20px; }
+  .home-view .featured { display: flex; min-height: 0; flex: 1 1 auto; flex-direction: column; padding: 17px clamp(28px, 4vw, 56px) 11px; }
+  .home-view .featured-heading { gap: 24px; margin-bottom: 11px; }
+  .home-view .featured-heading h2 { font-size: clamp(23px, 2.1vw, 32px); }
+  .home-view .featured-grid { min-height: 0; flex: 1 1 auto; }
+  .home-view .project-card { padding: 9px 9px 11px; }
+  .home-view .card-meta { margin-bottom: 6px; }
+  .home-view .project-card > img { aspect-ratio: 3.1 / 1; }
+  .home-view .project-card h3 { margin-top: 7px; font-size: 15px; }
+  .home-view .project-card > p { min-height: 31px; font-size: 10px; line-height: 1.35; }
+  .home-view .tags { margin-top: 7px; }
+  .home-view .card-arrow { right: 10px; bottom: 10px; width: 31px; height: 31px; }
+  .home-view .toolkit-strip { flex: 0 0 auto; min-height: 44px; margin-bottom: 12px; padding-block: 9px; }
+}
+
 .inner-view { min-height: 100vh; padding: clamp(56px, 7vw, 96px) clamp(28px, 7vw, 104px); background: linear-gradient(145deg, #172621, #0d0d0d); }
 .page-heading { max-width: 780px; margin-bottom: 50px; }
 .page-heading h1, .contact-view h1 { font-size: clamp(42px, 5vw, 70px); }
