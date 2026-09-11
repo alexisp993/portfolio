@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portfolio of Alex Pagtakhan, Power BI Developer and Data Analyst specializing in dashboards, data models, and reporting automation.">
+  <meta name="theme-color" content="#fffef0">
+  <title>Alex Pagtakhan — Data Analyst</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <div class="loader" data-loader aria-hidden="true">
+    <div class="loader-mark">
+      <span></span><span></span><span></span><span></span>
+    </div>
+    <p>Finding the signal</p>
+  </div>
+
+  <div class="site-shell">
+    <aside class="sidebar" id="site-sidebar" aria-label="Primary navigation">
+      <div class="identity">
+        <div class="portrait-wrap">
+          <img src="public/assets/alex-pagtakhan.png" alt="Alex Pagtakhan" class="portrait">
+        </div>
+        <div class="identity-copy">
+          <strong>Alex Pagtakhan</strong>
+          <span>Power BI Developer<br>Data Analyst</span>
+        </div>
+      </div>
+
+      <nav class="nav-list" aria-label="Portfolio">
+        <a href="#home" data-route="home" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 10.5 12 3l8.5 7.5M5.5 9v11h13V9M9.5 20v-6h5v6"/></svg><span>Home</span></a>
+        <a href="#projects" data-route="projects"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h6l2 2h8v12H4zM8 11h8M8 15h5"/></svg><span>Projects</span></a>
+        <a href="#skills" data-route="skills"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M5 8l7-5 7 5M5 16l7 5 7-5M5 8v8l7 5 7-5V8"/></svg><span>Skills</span></a>
+        <a href="#about" data-route="about"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5 21c.5-5 2.8-7.5 7-7.5S18.5 16 19 21"/></svg><span>About</span></a>
+        <a href="#contact" data-route="contact"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.5h17v13h-17zM4 6l8 7 8-7"/></svg><span>Contact</span></a>
+      </nav>
+
+      <div class="sidebar-foot">
+        <a href="public/assets/Alex-Pagtakhan-Data-Analyst.pdf" download class="resume-link"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 20h14"/></svg><span>Download résumé</span></a>
+        <button class="collapse-button" type="button" data-collapse aria-label="Collapse sidebar" aria-expanded="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 5-7 7 7 7"/></svg><span>Collapse</span></button>
+      </div>
+    </aside>
+
+    <header class="mobile-header">
+      <a href="#home" class="mobile-brand">AP<span>.</span></a>
+      <button type="button" class="menu-button" data-menu aria-controls="site-sidebar" aria-expanded="false"><span></span><span></span><span></span><span class="sr-only">Open navigation</span></button>
+    </header>
+
+    <main id="main-content" tabindex="-1">
+      <section class="view home-view is-active" data-view="home" aria-labelledby="home-title">
+        <div class="home-intro">
+          <h1 id="home-title">Transforming data into<br><em>decisions that matter.</em></h1>
+          <p>I design reliable dashboards, semantic models, and reporting workflows that turn complex operations into clear next steps.</p>
+          <a href="#projects" class="text-link">Explore my work <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5"/></svg></a>
+        </div>
+
+        <div class="marquee-shell" aria-label="Analytics tools">
+          <span class="marquee-label">Tools I work with</span>
+          <div class="marquee" data-marquee>
+            <div class="marquee-track">
+              <div class="tool-set"><span>Power BI</span><i></i><span>SQL</span><i></i><span>DAX</span><i></i><span>Power Query</span><i></i><span>Excel</span><i></i><span>Power Automate</span><i></i></div>
+              <div class="tool-set" aria-hidden="true"><span>Power BI</span><i></i><span>SQL</span><i></i><span>DAX</span><i></i><span>Power Query</span><i></i><span>Excel</span><i></i><span>Power Automate</span><i></i></div>
+            </div>
+          </div>
+          <button type="button" class="marquee-control" data-marquee-control aria-pressed="false" aria-label="Pause tools animation"><svg class="pause-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6v12M16 6v12"/></svg><svg class="play-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 11 7-11 7z"/></svg></button>
+        </div>
+
+        <div class="bento" aria-label="Portfolio overview">
+          <a class="panel feature-panel" href="#projects">
+            <div class="panel-heading"><div><span>Featured capability</span><h2>Operational performance, made legible.</h2></div><svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M9 5h10v10"/></svg></div>
+            <div class="chart-wrap">
+              <svg class="demo-chart" viewBox="0 0 720 220" role="img" aria-labelledby="chart-title chart-desc">
+                <title id="chart-title">Illustrative operational trend chart</title><desc id="chart-desc">Sample data showing a rising primary trend and a stable comparison trend across six periods.</desc>
+                <g class="grid"><path d="M44 40h632M44 90h632M44 140h632M44 190h632"/></g>
+                <path class="comparison" d="M44 158C110 150 136 162 198 139s99-9 150-23 91 10 145-20 93-18 183-37"/>
+                <path class="primary-line" d="M44 174c57-16 84-2 139-38s98-18 144-50 91 14 148-31 118-10 201-34"/>
+                <g class="points"><circle cx="44" cy="174" r="5"/><circle cx="183" cy="136" r="5"/><circle cx="327" cy="86" r="5"/><circle cx="475" cy="55" r="5"/><circle cx="676" cy="21" r="5"/></g>
+              </svg>
+              <div class="chart-meta"><span><i class="key primary-key"></i>Primary signal</span><span><i class="key comparison-key"></i>Comparison</span><small>Illustrative / sample data</small></div>
+            </div>
+          </a>
+
+          <a class="panel about-panel" href="#about"><div class="mini-portrait"><img src="public/assets/alex-pagtakhan.png" alt="" aria-hidden="true"></div><div><span>About Alex</span><h2>Analytical thinking, grounded in operations.</h2><p>Experience spanning reporting, team leadership, and business systems.</p></div><svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M9 5h10v10"/></svg></a>
+
+          <a class="panel skills-panel" href="#skills"><div class="panel-heading"><div><span>Core toolkit</span><h2>Built for the full reporting cycle.</h2></div><svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M9 5h10v10"/></svg></div><div class="skill-chips"><span>Power BI</span><span>SQL</span><span>DAX</span><span>Power Query</span><span>Excel</span><span>Power Automate</span></div></a>
+
+          <a class="panel experience-panel" href="#about"><div><span>Professional experience</span><h2>Reporting expertise shaped by the people who use it.</h2><p>From MIS supervision to account reporting and freelance analytics.</p></div><svg class="flow-lines" viewBox="0 0 240 90" aria-hidden="true"><path d="M6 69c37 0 35-43 72-43s37 43 76 43 37-43 80-43"/><circle cx="6" cy="69" r="4"/><circle cx="78" cy="26" r="4"/><circle cx="154" cy="69" r="4"/><circle cx="234" cy="26" r="4"/></svg></a>
+
+          <a class="panel contact-panel" href="#contact"><div class="contact-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.5h17v13h-17zM4 6l8 7 8-7"/></svg></div><div><span>Start a conversation</span><h2>Let’s make the next decision clearer.</h2></div><svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M9 5h10v10"/></svg></a>
+        </div>
+      </section>
+
+      <section class="view inner-view" data-view="projects" aria-labelledby="projects-title">
+        <header class="page-heading"><h1 id="projects-title">Work that turns reporting into a working system.</h1><p>These experience highlights reflect responsibilities across freelance analytics and reporting roles. They are capability areas, not published client case studies.</p></header>
+        <div class="project-list">
+          <article class="project-row"><div class="project-index">A</div><div><h2>KPI dashboards</h2><p>Business-facing Power BI dashboards that organize operational measures into clear, useful views.</p><ul><li>Define KPI logic with stakeholders</li><li>Design drill paths and usable report layouts</li><li>Validate outputs before delivery</li></ul><button type="button" class="detail-toggle" aria-expanded="false">View details <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button><div class="project-detail"><p>The work connects business questions to measures, builds the report experience around how teams review performance, and establishes repeatable checks so decisions rest on consistent numbers.</p></div></div><div class="project-symbol"><svg viewBox="0 0 120 120" aria-hidden="true"><rect x="15" y="62" width="18" height="35"/><rect x="50" y="38" width="18" height="59"/><rect x="85" y="20" width="18" height="77"/><path d="M15 48 51 28l34 2 20-17"/></svg></div></article>
+          <article class="project-row"><div class="project-index">B</div><div><h2>Data models & measures</h2><p>Structured semantic models, SQL-sourced data, and DAX measures designed for dependable analysis.</p><ul><li>Extract and validate source data with SQL</li><li>Shape and optimize transformations in Power Query</li><li>Build reusable DAX measures</li></ul><button type="button" class="detail-toggle" aria-expanded="false">View details <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button><div class="project-detail"><p>A strong report begins below the canvas. This work focuses on model relationships, calculation logic, naming, and refresh-aware transformations that make future reporting easier to maintain.</p></div></div><div class="project-symbol"><svg viewBox="0 0 120 120" aria-hidden="true"><ellipse cx="60" cy="25" rx="42" ry="14"/><path d="M18 25v29c0 8 19 14 42 14s42-6 42-14V25M18 54v29c0 8 19 14 42 14s42-6 42-14V54"/></svg></div></article>
+          <article class="project-row"><div class="project-index">C</div><div><h2>Reporting automation</h2><p>Workflow improvements that reduce repetitive reporting steps and support consistent delivery.</p><ul><li>Map manual reporting handoffs</li><li>Automate repeatable actions with Power Automate</li><li>Standardize reporting outputs in Excel and Power BI</li></ul><button type="button" class="detail-toggle" aria-expanded="false">View details <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button><div class="project-detail"><p>Automation is applied where it removes avoidable effort: moving information, triggering recurring steps, and keeping reporting routines consistent while preserving clear points for human review.</p></div></div><div class="project-symbol"><svg viewBox="0 0 120 120" aria-hidden="true"><path d="M88 37a39 39 0 1 0 7 45M88 37H67M88 37V16"/><path d="M43 59h34M60 42v34"/></svg></div></article>
+        </div>
+      </section>
+
+      <section class="view inner-view" data-view="skills" aria-labelledby="skills-title">
+        <header class="page-heading"><h1 id="skills-title">A practical toolkit for reliable analytics.</h1><p>Tools and methods used to move from source data to a report people can trust and act on.</p></header>
+        <div class="skills-groups">
+          <article><span>Visual analytics</span><h2>Power BI</h2><p>Dashboard design, semantic modeling, KPI definition, drill paths, and report experiences built around real operational questions.</p><div class="skill-tags"><span>Dashboard design</span><span>Data visualization</span><span>KPI reporting</span></div></article>
+          <article><span>Data logic</span><h2>SQL & DAX</h2><p>Source extraction, data validation, reusable calculations, and measures that make business logic explicit.</p><div class="skill-tags"><span>Data extraction</span><span>Validation</span><span>Measures</span></div></article>
+          <article><span>Transformation</span><h2>Power Query & Excel</h2><p>Cleaning, shaping, and organizing data for repeatable reporting while improving the steps behind each refresh.</p><div class="skill-tags"><span>Data shaping</span><span>Optimization</span><span>Reporting</span></div></article>
+          <article><span>Workflow</span><h2>Power Automate</h2><p>Automating recurring handoffs and reporting actions to reduce manual work and create more consistent processes.</p><div class="skill-tags"><span>Workflow mapping</span><span>Automation</span><span>Process improvement</span></div></article>
+        </div>
+      </section>
+
+      <section class="view inner-view" data-view="about" aria-labelledby="about-title">
+        <header class="page-heading about-heading"><div><h1 id="about-title">I bring an operator’s perspective to analytics.</h1><p>My experience in reporting and team leadership shapes how I build: understand the decision first, make the logic dependable, and keep the result clear for the people using it.</p></div><img src="public/assets/alex-pagtakhan.png" alt="Portrait of Alex Pagtakhan"></header>
+        <div class="timeline" aria-label="Professional timeline">
+          <article><time>Sep 2022 — Present</time><div><h2>Freelance Data Analyst / Power BI Developer</h2><p>Building dashboards, semantic models, measures, queries, transformations, and workflow automations for reporting needs.</p></div></article>
+          <article><time>Jan 2020 — Jul 2023</time><div><h2>Account Supervisor — Reports</h2><p>Foundever</p><p>Led reporting responsibilities with an understanding of operational context, stakeholder needs, and how teams use performance information.</p></div></article>
+          <article><time>May 2012 — Jul 2018</time><div><h2>MIS Supervisor</h2><p>MSA Global Distribution Inc.</p><p>Managed business information and reporting work, building a foundation in data accuracy, process discipline, and operational support.</p></div></article>
+        </div>
+        <div class="education"><span>Education</span><h2>Associate in Information Technology</h2><p>Major in Computer Programming · Datacom Institute · 2010–2012</p></div>
+      </section>
+
+      <section class="view inner-view contact-view" data-view="contact" aria-labelledby="contact-title">
+        <div class="contact-copy"><h1 id="contact-title">Have a reporting challenge worth untangling?</h1><p>I’m open to data analyst and Power BI opportunities where clear thinking, dependable reporting, and practical business context matter.</p><div class="contact-actions"><a class="primary-button" href="mailto:alexis.pagtakhan@gmail.com">Send an email <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5"/></svg></a><button type="button" class="secondary-button" data-copy-email>Copy email</button></div><p class="copy-status" data-copy-status role="status" aria-live="polite"></p></div>
+        <div class="contact-card"><span>Email</span><a href="mailto:alexis.pagtakhan@gmail.com">alexis.pagtakhan@gmail.com</a><div class="contact-rule"></div><span>Résumé</span><a href="public/assets/Alex-Pagtakhan-Data-Analyst.pdf" download>Download PDF <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 20h14"/></svg></a></div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
