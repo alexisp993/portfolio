@@ -27,6 +27,7 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round
 .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; }
 .skip-link { position: fixed; z-index: 1000; top: 12px; left: 12px; padding: 10px 16px; background: var(--text); color: var(--deep); transform: translateY(-150%); transition: transform .2s var(--ease-out); }
 .skip-link:focus { transform: none; }
+.fractal-background { position: fixed; z-index: 12; inset: 0 0 0 var(--rail); width: calc(100vw - var(--rail)); height: 100vh; pointer-events: none; opacity: .38; mix-blend-mode: screen; mask-image: radial-gradient(ellipse at 58% 42%, #000 12%, rgba(0,0,0,.88) 62%, transparent 100%); transition: opacity .3s var(--ease-out); }
 
 .sidebar { position: fixed; z-index: 20; inset: 0 auto 0 0; width: var(--rail); display: flex; flex-direction: column; padding: 34px 27px 26px; background: linear-gradient(180deg, #10251e, #0d201a); border-right: 1px solid var(--line); }
 .profile { display: grid; justify-items: center; gap: 10px; min-width: 205px; text-align: center; }
@@ -269,6 +270,7 @@ main { min-height: 100vh; margin-left: var(--rail); }
   .sidebar nav a, .side-bottom a { justify-content: flex-start; padding-inline: 13px; }
   .side-bottom button { display: none; }
   main { margin-left: 0; }
+  .fractal-background { left: 0; width: 100vw; opacity: .3; }
   .hero-banner { grid-template-columns: 1fr; height: auto; min-height: 0; }
   .hero-copy { padding: 44px 20px 32px; }
   .hero-copy h1 { font-size: 50px; }
@@ -334,4 +336,5 @@ main { min-height: 100vh; margin-left: var(--rail); }
   .tool-track { width: auto; animation: none; }
   .tool-track ul { flex-wrap: wrap; white-space: normal; }
   .tool-track ul[aria-hidden="true"] { display: none; }
+  .fractal-background { transition: none; opacity: .25; }
 }

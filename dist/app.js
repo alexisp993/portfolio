@@ -68,6 +68,7 @@ collapseButton?.addEventListener('click', () => {
   collapseButton.setAttribute('aria-label', collapsed ? 'Expand sidebar' : 'Collapse sidebar');
   collapseButton.querySelector('span').textContent = collapsed ? 'Expand' : 'Collapse';
   try { localStorage.setItem('sidebar-collapsed', String(collapsed)); } catch {}
+  requestAnimationFrame(resizeFractalBackground);
 });
 
 try {
@@ -169,3 +170,85 @@ projectFilters.forEach((button) => {
 
 projectSearch?.addEventListener('input', updateProjectResults);
 updateProjectResults();
+
+const fractalCanvas = document.querySelector('[data-fractal-background]');
+const fractalContext = fractalCanvas?.getContext('2d');
+const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+const finePointer = matchMedia('(hover: hover) and (pointer: fine)');
+const fractalMouse = { x: innerWidth * .58, y: innerHeight * .42, active: false };
+let fractalFrame = 0;
+let fractalLastDraw = 0;
+
+function resizeFractalBackground() {
+  if (!fractalCanvas || !fractalContext) return;
+  const bounds = fractalCanvas.getBoundingClientRect();
+  const pixelRatio = Math.min(devicePixelRatio || 1, 1.5);
+  fractalCanvas.width = Math.max(1, Math.round(bounds.width * pixelRatio));
+  fractalCanvas.height = Math.max(1, Math.round(bounds.height * pixelRatio));
+  fractalContext.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
+  drawFractalBackground(performance.now());
+}
+
+function drawFractalBackground(time) {
+  if (!fractalCanvas || !fractalContext) return;
+  const width = fractalCanvas.clientWidth;
+  const height = fractalCanvas.clientHeight;
+  const spacing = innerWidth < 700 ? 38 : 30;
+  const radius = 190;
+  const localMouseX = fractalMouse.x - fractalCanvas.getBoundingClientRect().left;
+  const localMouseY = fractalMouse.y;
+
+  fractalContext.clearRect(0, 0, width, height);
+  for (let x = spacing / 2; x < width; x += spacing) {
+    for (let y = spacing / 2; y < height; y += spacing) {
+      const dx = x - localMouseX;
+      const dy = y - localMouseY;
+      const distance = Math.hypot(dx, dy);
+      const strength = fractalMouse.active && distance < radius ? Math.pow(1 - distance / radius, 2) : 0;
+      const angle = Math.atan2(dy, dx);
+      const wave = reducedMotion.matches ? 0 : Math.sin(distance * .05 - time * .004) * 12 * strength;
+      const dotX = x + Math.cos(angle) * wave;
+      const dotY = y + Math.sin(angle) * wave;
+      const dotRadius = 1.05 + strength * 1.15;
+      fractalContext.beginPath();
+      fractalContext.arc(dotX, dotY, dotRadius, 0, Math.PI * 2);
+      fractalContext.fillStyle = strength > .02
+        ? `rgba(121, 221, 176, ${.2 + strength * .52})`
+        : 'rgba(115, 174, 126, .2)';
+      fractalContext.fill();
+    }
+  }
+}
+
+function animateFractalBackground(time) {
+  if (time - fractalLastDraw >= 32) {
+    drawFractalBackground(time);
+    fractalLastDraw = time;
+  }
+  fractalFrame = requestAnimationFrame(animateFractalBackground);
+}
+
+function setFractalMotion() {
+  cancelAnimationFrame(fractalFrame);
+  if (reducedMotion.matches || document.hidden) {
+    fractalMouse.active = false;
+    drawFractalBackground(performance.now());
+  } else {
+    fractalFrame = requestAnimationFrame(animateFractalBackground);
+  }
+}
+
+if (fractalCanvas && fractalContext) {
+  resizeFractalBackground();
+  addEventListener('resize', resizeFractalBackground, { passive: true });
+  addEventListener('pointermove', (event) => {
+    if (!finePointer.matches || reducedMotion.matches) return;
+    fractalMouse.x = event.clientX;
+    fractalMouse.y = event.clientY;
+    fractalMouse.active = true;
+  }, { passive: true });
+  document.addEventListener('pointerleave', () => { fractalMouse.active = false; });
+  document.addEventListener('visibilitychange', setFractalMotion);
+  reducedMotion.addEventListener('change', setFractalMotion);
+  setFractalMotion();
+}
