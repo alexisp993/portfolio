@@ -21,6 +21,32 @@ if (introSeen || matchMedia('(prefers-reduced-motion: reduce)').matches) {
   setTimeout(() => loader?.remove(), 1150);
 }
 
+const visitDisplay = document.querySelector('[data-profile-visits]');
+const visitCount = document.querySelector('[data-visit-count]');
+
+async function loadVisitCount() {
+  if (!visitDisplay || !visitCount) return;
+  let countedThisSession = false;
+  try { countedThisSession = sessionStorage.getItem('portfolio-visit-counted') === '1'; } catch {}
+
+  try {
+    const response = await fetch('/api/visits', {
+      method: countedThisSession ? 'GET' : 'POST',
+      headers: { Accept: 'application/json' }
+    });
+    if (!response.ok) return;
+    const data = await response.json();
+    if (!Number.isFinite(data.count)) return;
+    visitCount.textContent = new Intl.NumberFormat().format(data.count);
+    visitDisplay.hidden = false;
+    if (!countedThisSession) {
+      try { sessionStorage.setItem('portfolio-visit-counted', '1'); } catch {}
+    }
+  } catch {}
+}
+
+loadVisitCount();
+
 const menuButton = document.querySelector('[data-menu]');
 const collapseButton = document.querySelector('[data-collapse]');
 const themeButton = document.querySelector('[data-theme-toggle]');
