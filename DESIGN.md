@@ -1,19 +1,17 @@
 # Design direction
 
+Dark botanical editorial portfolio inspired by the supplied mock-up. The experience mode is showcase: the work leads, navigation stays quiet, and project imagery carries the storytelling.
+
 An approachable analytics workspace: compact introduction above an asymmetrical dashboard of portfolio shortcuts, anchored by a personal navigation rail. The reference screenshot supplies the structure while botanical colors create a quieter identity.
 
 ## Tokens
 
-- Seaweed: #39583d, primary actions and ink accents.
-- Mint: #e8efdd, supporting surfaces.
-- Ivory: #fffef0, page and panel canvas.
-- Taupe: #858675, borders and decorative supporting marks; darken for readable text where required.
-- Body: readable sans serif with a compact bold 34–40px desktop tagline.
-- Panels: restrained 12–16px rounding, light borders, generous interior space.
+- Deep: #172621; Moss: #2A4038; Leaf: #3B593F; Accent: #4D734C; Ink: #0D0D0D.
+- Local system sans typography, oversized editorial headings, thin botanical lines, restrained rounded cards.
 
 ## Behavior
 
-Five hash-addressable views retain browser history and direct links. Navigation collapse retains accessible labels. Motion conveys the first arrival and changes of view, using transform and opacity with cubic-bezier(.23,1,.32,1). The marquee uses linear motion and offers a persistent pause control. Reduced-motion preferences remove travel and stop automatic scrolling.
+Five hash-addressable views retain browser history and direct links. Navigation collapses on desktop and becomes a mobile drawer. The hero rotates real project screenshots with vignette, green tint, keyboard controls, pause on hover/focus/hidden, and reduced-motion support.
 
 ## Content and assets
 

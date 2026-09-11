@@ -17,7 +17,7 @@ Then open `http://localhost:8080`.
 
 - `index.html` — content, SVG graphics, and accessible page structure
 - `styles.css` — responsive layout, palette, typography, and motion
-- `app.js` — hash routing, navigation state, loader, marquee control, and interactions
-- `public/assets/` — profile image and downloadable résumé
+- `app.js` — hash routing, navigation state, loader, project slider, and interactions
+- `public/assets/` — profile image, résumé, and real project screenshots
 
-The chart on the home page is explicitly illustrative and uses sample data. Work examples are presented as experience highlights based on Alex's professional responsibilities.
+The home page uses local project screenshots with a vignette treatment and accessible controls. All portfolio claims are grounded in the supplied résumé and project assets.
