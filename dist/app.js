@@ -46,8 +46,35 @@ function applyTheme(theme, persist = true) {
 }
 
 applyTheme(document.documentElement.dataset.theme, false);
-themeButton?.addEventListener('click', () => {
-  applyTheme(document.documentElement.dataset.theme === 'light' ? 'dark' : 'light');
+themeButton?.addEventListener('click', async () => {
+  if (themeButton.disabled) return;
+  const nextTheme = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+  const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (!document.startViewTransition || reduceMotion) {
+    applyTheme(nextTheme);
+    return;
+  }
+
+  const bounds = themeButton.getBoundingClientRect();
+  const originX = bounds.left + bounds.width / 2;
+  const originY = bounds.top + bounds.height / 2;
+  const radius = Math.hypot(
+    Math.max(originX, innerWidth - originX),
+    Math.max(originY, innerHeight - originY)
+  );
+
+  document.documentElement.style.setProperty('--theme-origin-x', `${originX}px`);
+  document.documentElement.style.setProperty('--theme-origin-y', `${originY}px`);
+  document.documentElement.style.setProperty('--theme-reveal-radius', `${radius}px`);
+  document.documentElement.classList.add('theme-revealing');
+  themeButton.disabled = true;
+
+  const transition = document.startViewTransition(() => applyTheme(nextTheme));
+  try { await transition.finished; } finally {
+    document.documentElement.classList.remove('theme-revealing');
+    themeButton.disabled = false;
+  }
 });
 
 function closeMenu() {

@@ -47,6 +47,20 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round
 html[data-theme="light"] .theme-toggle .theme-sun { display: none; }
 html[data-theme="light"] .theme-toggle .theme-moon { display: block; }
 .theme-toggle:hover, .side-bottom button:hover { background: rgba(77,115,76,.22); color: var(--text); }
+.theme-toggle:active { transform: scale(.97); }
+.theme-toggle:disabled { cursor: wait; }
+
+::view-transition-old(root),
+::view-transition-new(root) { animation: none; mix-blend-mode: normal; }
+::view-transition-old(root) { z-index: 1; }
+html.theme-revealing::view-transition-new(root) {
+  z-index: 2;
+  animation: theme-spread 500ms var(--ease-drawer) both;
+}
+@keyframes theme-spread {
+  from { clip-path: circle(0 at var(--theme-origin-x) var(--theme-origin-y)); }
+  to { clip-path: circle(var(--theme-reveal-radius) at var(--theme-origin-x) var(--theme-origin-y)); }
+}
 .sidebar-collapsed { --rail: 82px; }
 .sidebar-collapsed .sidebar { padding-inline: 12px; }
 .sidebar-collapsed .profile { min-width: 0; }
@@ -460,4 +474,5 @@ html[data-theme="light"] .loader { background: #edf2e9; }
   .tool-track ul[aria-hidden="true"] { display: none; }
   .fractal-background { transition: none; opacity: .25; }
   .project-detail { transition: opacity 200ms var(--ease-out); transform: none; }
+  ::view-transition-new(root) { animation: none !important; }
 }
