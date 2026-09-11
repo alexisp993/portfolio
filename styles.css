@@ -209,7 +209,6 @@ main { min-height: 100vh; margin-left: var(--rail); }
 .location-copy p { display: grid; margin: 0; }
 .location-copy strong { font-size: 15px; }
 .location-copy span { color: var(--soft); font-size: 12px; }
-.availability { margin: 0 24px; padding-top: 20px; border-top: 1px solid rgba(112,177,138,.22); color: var(--soft); font-size: 12px; }
 .about-heading { display: flex; align-items: center; justify-content: space-between; gap: 40px; max-width: none; }
 .about-heading > div { max-width: 720px; }
 .about-heading img { width: 150px; height: 180px; object-fit: cover; object-position: center 20%; border-radius: 14px; }
