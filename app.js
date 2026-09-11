@@ -123,3 +123,41 @@ document.addEventListener('keydown', (event) => {
   }
 });
 restartSlider();
+
+const projectCards = [...document.querySelectorAll('[data-project-card]')];
+const projectFilters = [...document.querySelectorAll('[data-project-filter]')];
+const projectSearch = document.querySelector('[data-project-search]');
+const projectEmpty = document.querySelector('[data-project-empty]');
+const projectStatus = document.querySelector('[data-project-status]');
+let activeProjectFilter = 'all';
+
+function updateProjectResults() {
+  const query = projectSearch?.value.trim().toLowerCase() || '';
+  let visibleCount = 0;
+
+  projectCards.forEach((card) => {
+    const matchesFilter = activeProjectFilter === 'all' || card.dataset.category === activeProjectFilter;
+    const matchesSearch = !query || card.dataset.search.includes(query);
+    const visible = matchesFilter && matchesSearch;
+    card.hidden = !visible;
+    if (visible) visibleCount += 1;
+  });
+
+  if (projectEmpty) projectEmpty.hidden = visibleCount > 0;
+  if (projectStatus) projectStatus.textContent = `${visibleCount} project${visibleCount === 1 ? '' : 's'} shown`;
+}
+
+projectFilters.forEach((button) => {
+  button.addEventListener('click', () => {
+    activeProjectFilter = button.dataset.projectFilter;
+    projectFilters.forEach((filter) => {
+      const selected = filter === button;
+      filter.classList.toggle('is-active', selected);
+      filter.setAttribute('aria-pressed', String(selected));
+    });
+    updateProjectResults();
+  });
+});
+
+projectSearch?.addEventListener('input', updateProjectResults);
+updateProjectResults();

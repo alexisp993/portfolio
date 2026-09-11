@@ -52,11 +52,46 @@
       <div class="toolkit-strip" aria-label="Toolkit"><div class="toolkit-label"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19V9m7 10V5m7 14v-7"/></svg><strong>TOOLKIT</strong></div><div class="tool-window"><div class="tool-track"><ul><li>Power BI</li><li>SQL</li><li>DAX</li><li>Power Query</li><li>Microsoft Excel</li><li>Power Automate</li><li>Data Modeling</li><li>Data Visualization</li><li>Dashboard Development</li><li>KPI Reporting</li></ul><ul aria-hidden="true"><li>Power BI</li><li>SQL</li><li>DAX</li><li>Power Query</li><li>Microsoft Excel</li><li>Power Automate</li><li>Data Modeling</li><li>Data Visualization</li><li>Dashboard Development</li><li>KPI Reporting</li></ul></div></div></div>
     </section>
 
-    <section class="view inner-view" data-view="projects" aria-labelledby="projects-title"><header class="page-heading"><p class="eyebrow">PROJECTS</p><h1 id="projects-title">Work built to make information useful.</h1><p>Selected reporting and web projects, presented with the information currently available.</p></header><div class="project-list">
-      <article><img src="public/assets/lagerbox-financial-dashboard.png" alt="Financial overview dashboard"><div><p class="eyebrow">POWER BI · REPORTING</p><h2>Financial Overview Dashboard</h2><p>A financial and operational reporting layout with spaces for revenue, profit, cost, and location analysis.</p><div class="tags"><span>Dashboard Design</span><span>Financial Reporting</span><span>KPI Reporting</span></div></div></article>
-      <article><img src="public/assets/book-tracker.png" alt="book-tracker interface"><div><p class="eyebrow">WEB APPLICATION</p><h2>book-tracker</h2><p>A modern web application for tracking books, reading sessions, notes, and goals.</p><div class="project-links"><a href="https://book-tracker-wheat.vercel.app/" target="_blank" rel="noreferrer">Live project</a><a href="https://github.com/alexisp993/Book-Tracker" target="_blank" rel="noreferrer">Repository</a></div></div></article>
-      <article><img src="public/assets/ma-anong-ulam.png" alt="Ma, Anong Ulam interface"><div><p class="eyebrow">WEB APPLICATION</p><h2>Ma, Anong Ulam</h2><p>A recipe discovery experience for finding Filipino dishes and organizing meal ideas.</p><div class="project-links"><a href="https://ma-anong-ulam-eight.vercel.app/recipes" target="_blank" rel="noreferrer">Live project</a><a href="https://github.com/alexisp993/ma-anong-ulam" target="_blank" rel="noreferrer">Repository</a></div></div></article>
-    </div></section>
+    <section class="view inner-view projects-view" data-view="projects" aria-labelledby="projects-title">
+      <header class="projects-header">
+        <p class="eyebrow">PROJECTS</p>
+        <h1 id="projects-title">Selected <em>Work</em></h1>
+        <p>A collection of data analytics and web development projects built to solve real problems and create meaningful impact.</p>
+      </header>
+
+      <div class="projects-toolbar" aria-label="Project controls">
+        <div class="project-filters" role="group" aria-label="Filter projects">
+          <button type="button" class="is-active" data-project-filter="all" aria-pressed="true">All</button>
+          <button type="button" data-project-filter="power-bi" aria-pressed="false">Power BI</button>
+          <button type="button" data-project-filter="web-apps" aria-pressed="false">Web Apps</button>
+          <button type="button" data-project-filter="automation" aria-pressed="false">Automation</button>
+          <button type="button" data-project-filter="data-analysis" aria-pressed="false">Data Analysis</button>
+          <button type="button" data-project-filter="other" aria-pressed="false">Other</button>
+        </div>
+        <label class="project-search">
+          <span class="sr-only">Search projects</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+          <input type="search" data-project-search placeholder="Search projects…" autocomplete="off">
+        </label>
+      </div>
+
+      <div class="projects-grid" data-project-grid>
+        <article class="archive-card" data-project-card data-category="power-bi" data-search="financial overview dashboard power bi reporting dashboard design financial reporting kpi reporting">
+          <img src="public/assets/lagerbox-financial-dashboard.png" alt="Financial overview dashboard with revenue, profit, cost, and location reporting">
+          <div class="archive-card-body"><p class="archive-category">POWER BI</p><h2>Financial Overview Dashboard</h2><p>A financial and operational reporting layout for revenue, profit, cost, and location analysis.</p><div class="tags"><span>Power BI</span><span>Financial Reporting</span><span>KPI Design</span></div><a class="archive-link" href="public/assets/lagerbox-financial-dashboard.png" target="_blank">View project <span aria-hidden="true">→</span></a></div>
+        </article>
+        <article class="archive-card" data-project-card data-category="web-apps" data-search="book-tracker book tracker reading web application next.js typescript books notes goals">
+          <img src="public/assets/book-tracker.png" alt="book-tracker reading dashboard and calendar interface">
+          <div class="archive-card-body"><p class="archive-category">WEB APP</p><h2>book-tracker</h2><p>A modern web application for tracking books, reading sessions, notes, and reading goals.</p><div class="tags"><span>Next.js</span><span>TypeScript</span><span>Web App</span></div><a class="archive-link" href="https://book-tracker-wheat.vercel.app/" target="_blank" rel="noreferrer">View project <span aria-hidden="true">→</span></a></div>
+        </article>
+        <article class="archive-card" data-project-card data-category="web-apps" data-search="ma anong ulam filipino recipe discovery web application meals food">
+          <img src="public/assets/ma-anong-ulam.png" alt="Ma, Anong Ulam Filipino recipe discovery interface">
+          <div class="archive-card-body"><p class="archive-category">WEB APP</p><h2>Ma, Anong Ulam</h2><p>A recipe discovery experience for finding Filipino dishes and organizing everyday meal ideas.</p><div class="tags"><span>Web App</span><span>Recipe Discovery</span><span>Responsive UI</span></div><a class="archive-link" href="https://ma-anong-ulam-eight.vercel.app/recipes" target="_blank" rel="noreferrer">View project <span aria-hidden="true">→</span></a></div>
+        </article>
+      </div>
+      <p class="projects-empty" data-project-empty hidden>No projects match this filter yet.</p>
+      <p class="sr-only" data-project-status aria-live="polite"></p>
+    </section>
 
     <section class="view inner-view" data-view="skills" aria-labelledby="skills-title"><header class="page-heading"><p class="eyebrow">SKILLS</p><h1 id="skills-title">A practical toolkit for reliable analytics.</h1><p>Tools and methods used to move from source data to a report people can trust and act on.</p></header><div class="skill-grid"><article><span>Visual analytics</span><h2>Power BI</h2><p>Dashboard design, semantic modeling, KPI definition, drill paths, and report experiences.</p></article><article><span>Data logic</span><h2>SQL &amp; DAX</h2><p>Source extraction, validation, reusable calculations, and explicit business logic.</p></article><article><span>Transformation</span><h2>Power Query &amp; Excel</h2><p>Cleaning, shaping, and organizing data for repeatable reporting and refreshes.</p></article><article><span>Workflow</span><h2>Power Automate</h2><p>Automating recurring handoffs and reporting actions to reduce manual work.</p></article></div></section>
 
