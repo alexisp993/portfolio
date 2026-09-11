@@ -180,6 +180,23 @@ main { min-height: 100vh; margin-left: var(--rail); }
 .tool-mark.claude { color: #dc8d5e; font-size: 38px; }
 .tool-mark.chatgpt { color: #45d4a0; font-size: 34px; }
 .tool-mark.prompt { border: 2px solid #eef4ec; border-radius: 50%; font-size: 23px; line-height: 1; }
+.tool-mark { color: transparent; font-size: 0; background-image: url("public/assets/portfolio-icon-pack.png"); background-repeat: no-repeat; background-size: 691px 461px; border-radius: 0; clip-path: none; text-shadow: none; transform: none; }
+.tool-mark.powerbi { background-position: -29px -101px; }
+.tool-mark.dax { background-position: -90px -101px; }
+.tool-mark.query { background-position: -151px -101px; }
+.tool-mark.pivot { background-position: -215px -101px; }
+.tool-mark.excel { background-position: -278px -101px; }
+.tool-mark.sql { background-position: -354px -101px; }
+.tool-mark.python { background-position: -417px -101px; }
+.tool-mark.pandas { background-position: -478px -101px; }
+.tool-mark.numpy { background-position: -543px -101px; }
+.tool-mark.postgres { background-position: -611px -101px; }
+.tool-mark.automate { background-position: -29px -227px; }
+.tool-mark.n8n { background-position: -100px -227px; }
+.tool-mark.zapier { background-position: -171px -227px; }
+.tool-mark.claude { background-position: -354px -227px; }
+.tool-mark.chatgpt { background-position: -417px -227px; }
+.tool-mark.prompt { background-position: -478px -227px; }
 .skills-footer { display: grid; grid-template-columns: 1.15fr .85fr; margin-top: 18px; border: 1px solid rgba(82,146,110,.3); border-radius: 13px; background: rgba(13,42,32,.62); }
 .learning-block, .opportunity-block { display: grid; grid-template-columns: 74px 1fr; gap: 22px; padding: 24px; }
 .opportunity-block { border-left: 1px solid var(--line); }
