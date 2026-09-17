@@ -4,14 +4,14 @@ A lightweight, responsive portfolio for Alex Pagtakhan, Power BI Developer and D
 
 ## Run locally
 
-Open `index.html` directly in a browser, or serve the folder with any static server. For example:
+Run the included zero-dependency development server:
 
 ```powershell
 cd C:\Users\Personal\AI-Workspace\Projects\Alex-Analytics-Portfolio
-python -m http.server 8080
+npm run dev
 ```
 
-Then open `http://localhost:8080`.
+Then open `http://127.0.0.1:4317`. Keep the terminal open while using the local preview. To use another port, run `npm run dev -- --port 4318`.
 
 ## Structure
 
