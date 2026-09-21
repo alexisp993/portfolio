@@ -52,11 +52,6 @@ const collapseButton = document.querySelector('[data-collapse]');
 const themeButton = document.querySelector('[data-theme-toggle]');
 const themeLabel = document.querySelector('[data-theme-label]');
 const themeColor = document.querySelector('meta[name="theme-color"]');
-const projectDetail = document.querySelector('[data-project-detail]');
-const projectDetailClose = document.querySelector('[data-project-detail-close]');
-const projectDetailRoute = 'project-financial-overview';
-let lastBaseRoute = routes.includes(location.hash.slice(1).toLowerCase()) ? location.hash.slice(1).toLowerCase() : 'projects';
-let projectDetailTimer;
 
 function applyTheme(theme, persist = true) {
   const isLight = theme === 'light';
@@ -109,23 +104,9 @@ function closeMenu() {
   menuButton?.setAttribute('aria-label', 'Open navigation');
 }
 
-function openProjectDetail() {
-  clearTimeout(projectDetailTimer);
-  if (!projectDetail?.open) projectDetail.showModal();
-  requestAnimationFrame(() => requestAnimationFrame(() => projectDetail.classList.add('is-visible')));
-}
-
-function closeProjectDetail() {
-  if (!projectDetail?.open) return;
-  projectDetail.classList.remove('is-visible');
-  projectDetailTimer = setTimeout(() => projectDetail.close(), matchMedia('(prefers-reduced-motion: reduce)').matches ? 200 : 500);
-}
-
 function showRoute({ focus = true } = {}) {
   const requested = location.hash.slice(1).toLowerCase();
-  const showingProjectDetail = requested === projectDetailRoute;
-  const route = showingProjectDetail ? lastBaseRoute : (routes.includes(requested) ? requested : 'home');
-  if (!showingProjectDetail) lastBaseRoute = route;
+  const route = routes.includes(requested) ? requested : 'home';
 
   document.querySelectorAll('[data-view]').forEach((view) => {
     view.classList.toggle('is-active', view.dataset.view === route);
@@ -135,14 +116,11 @@ function showRoute({ focus = true } = {}) {
     else link.removeAttribute('aria-current');
   });
 
-  document.title = showingProjectDetail ? 'Financial Overview Dashboard — Alex Pagtakhan' : titles[route];
+  document.title = titles[route];
   closeMenu();
   scrollTo({ top: 0, behavior: 'instant' });
 
-  if (showingProjectDetail) openProjectDetail();
-  else closeProjectDetail();
-
-  if (focus && !showingProjectDetail) {
+  if (focus) {
     const heading = document.querySelector(`[data-view="${route}"] h1`);
     heading?.setAttribute('tabindex', '-1');
     heading?.focus({ preventScroll: true });
@@ -151,15 +129,6 @@ function showRoute({ focus = true } = {}) {
 
 addEventListener('hashchange', () => showRoute());
 showRoute({ focus: false });
-
-projectDetailClose?.addEventListener('click', () => { location.hash = lastBaseRoute; });
-projectDetail?.addEventListener('cancel', (event) => {
-  event.preventDefault();
-  location.hash = lastBaseRoute;
-});
-projectDetail?.addEventListener('click', (event) => {
-  if (event.target === projectDetail) location.hash = lastBaseRoute;
-});
 
 menuButton?.addEventListener('click', () => {
   const open = document.body.classList.toggle('menu-open');
@@ -189,7 +158,7 @@ const slider = document.querySelector('.hero-slider');
 const slides = [...document.querySelectorAll('[data-project-slide]')];
 const slideButtons = [...document.querySelectorAll('[data-slide]')];
 const slideStatus = document.querySelector('[data-slide-status]');
-const slideNames = ['Financial Overview', 'book-tracker', 'Ma, Anong Ulam'];
+const slideNames = ['book-tracker', 'Ma, Anong Ulam'];
 let currentSlide = 0;
 let slideTimer;
 
