@@ -158,7 +158,7 @@ const slider = document.querySelector('.hero-slider');
 const slides = [...document.querySelectorAll('[data-project-slide]')];
 const slideButtons = [...document.querySelectorAll('[data-slide]')];
 const slideStatus = document.querySelector('[data-slide-status]');
-const slideNames = ['book-tracker', 'Ma, Anong Ulam'];
+const slideNames = ['FreshBites Performance Analysis', 'book-tracker', 'Ma, Anong Ulam'];
 let currentSlide = 0;
 let slideTimer;
 
@@ -244,6 +244,45 @@ projectFilters.forEach((button) => {
 
 projectSearch?.addEventListener('input', updateProjectResults);
 updateProjectResults();
+
+const projectDetails = [...document.querySelectorAll('[data-project-detail]')];
+let projectDetailTrigger = null;
+
+function openProjectDetail(projectName, trigger) {
+  const detail = projectDetails.find((item) => item.dataset.projectDetail === projectName);
+  if (!detail) return;
+  projectDetailTrigger = trigger;
+  detail.showModal();
+  requestAnimationFrame(() => detail.classList.add('is-visible'));
+  detail.querySelector('.detail-scroll')?.scrollTo({ top: 0, behavior: 'instant' });
+}
+
+function closeProjectDetail(detail) {
+  if (!detail?.open) return;
+  detail.classList.remove('is-visible');
+  const finish = () => {
+    if (detail.open) detail.close();
+    projectDetailTrigger?.focus();
+    projectDetailTrigger = null;
+  };
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) finish();
+  else setTimeout(finish, 500);
+}
+
+document.querySelectorAll('[data-open-project]').forEach((trigger) => {
+  trigger.addEventListener('click', () => openProjectDetail(trigger.dataset.openProject, trigger));
+});
+
+projectDetails.forEach((detail) => {
+  detail.querySelector('[data-close-project]')?.addEventListener('click', () => closeProjectDetail(detail));
+  detail.addEventListener('cancel', (event) => {
+    event.preventDefault();
+    closeProjectDetail(detail);
+  });
+  detail.addEventListener('click', (event) => {
+    if (event.target === detail) closeProjectDetail(detail);
+  });
+});
 
 const fractalCanvas = document.querySelector('[data-fractal-background]');
 const fractalContext = fractalCanvas?.getContext('2d');
