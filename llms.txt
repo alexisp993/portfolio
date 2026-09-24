@@ -1,0 +1,19 @@
+# Alex Pagtakhan — Data Analyst and Power BI Developer
+
+Alex Pagtakhan is a Manila-based Microsoft Certified Power BI Data Analyst with five years of experience in data analysis, business intelligence, operations reporting, workflow automation, and performance management.
+
+## Primary profiles
+
+- [Portfolio](https://alex-analytics-portfolio.vercel.app/): Overview, projects, skills, biography, and contact details.
+- [Data Analyst profile](https://alex-analytics-portfolio.vercel.app/data-analyst/): Data preparation, analysis, reporting, SQL, Excel, and business intelligence experience.
+- [Power BI Developer profile](https://alex-analytics-portfolio.vercel.app/power-bi-developer/): Power BI, DAX, Power Query, semantic modeling, KPI reporting, and automation capabilities.
+
+## Evidence
+
+- [FreshBites Power BI case study](https://alex-analytics-portfolio.vercel.app/projects/freshbites-power-bi/): Restaurant profitability analysis covering net sales, gross margin, food cost, discounts, labor, waste, and branch performance.
+- [LinkedIn](https://www.linkedin.com/in/alexispagtakhan/)
+- [GitHub](https://github.com/alexisp993)
+
+## Location and availability
+
+Based in Manila, Philippines. Contact: alexis.pagtakhan@gmail.com

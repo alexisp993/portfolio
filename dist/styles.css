@@ -285,6 +285,9 @@ main { min-height: 100vh; margin-left: var(--rail); }
 .contact-view.is-active { display: grid; }
 .contact-card { display: grid; gap: 14px; padding: 34px; border: 1px solid var(--line); border-radius: 14px; background: #172d24; }
 .contact-card a { padding-block: 7px; overflow-wrap: anywhere; font-size: 17px; }
+.search-profiles { display: grid; gap: 5px; margin-top: 10px; padding-top: 16px; border-top: 1px solid var(--line); }
+.search-profiles p { margin: 0 0 4px; color: var(--muted); font-size: 10px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+.search-profiles a { color: #8ce5ba; font-size: 13px; }
 
 .project-detail { position: fixed; z-index: 80; inset: 0 0 0 auto; width: min(72vw, 980px); max-width: none; height: 100dvh; max-height: none; margin: 0; padding: 0; overflow: hidden; border: 0; border-radius: 16px 0 0 16px; background: #f5f7f3; color: #122019; opacity: 0; transform: translateX(100%); transition: opacity 500ms var(--ease-drawer), transform 500ms var(--ease-drawer); }
 .project-detail.is-visible { opacity: 1; transform: translateX(0); }

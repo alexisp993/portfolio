@@ -37,7 +37,7 @@ const server = http.createServer((request, response) => {
   let pathname;
   try { pathname = decodeURIComponent(requestUrl.pathname); } catch { return send(response, 400, 'Bad request'); }
   const relativePath = pathname === '/' ? 'index.html' : pathname.replace(/^\/+/, '');
-  const filePath = path.resolve(root, relativePath);
+  let filePath = path.resolve(root, relativePath);
 
   if (filePath !== root && !filePath.startsWith(`${root}${path.sep}`)) {
     send(response, 403, 'Forbidden');
@@ -45,7 +45,9 @@ const server = http.createServer((request, response) => {
   }
 
   fs.stat(filePath, (statError, stats) => {
-    if (statError || !stats.isFile()) {
+    if (!statError && stats.isDirectory()) filePath = path.join(filePath, 'index.html');
+    fs.stat(filePath, (fileError, fileStats) => {
+    if (fileError || !fileStats.isFile()) {
       send(response, 404, 'Not found');
       return;
     }
@@ -55,6 +57,7 @@ const server = http.createServer((request, response) => {
       'Cache-Control': 'no-store'
     });
     fs.createReadStream(filePath).pipe(response);
+    });
   });
 });
 
