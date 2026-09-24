@@ -26,22 +26,23 @@ const visitCount = document.querySelector('[data-visit-count]');
 
 async function loadVisitCount() {
   if (!visitDisplay || !visitCount) return;
-  let countedThisSession = false;
-  try { countedThisSession = sessionStorage.getItem('portfolio-visit-counted') === '1'; } catch {}
+  let visitorId = '';
+  try {
+    visitorId = localStorage.getItem('portfolio-visitor-id') || crypto.randomUUID();
+    localStorage.setItem('portfolio-visitor-id', visitorId);
+  } catch {}
 
   try {
     const response = await fetch('/api/visits', {
-      method: countedThisSession ? 'GET' : 'POST',
-      headers: { Accept: 'application/json' }
+      method: visitorId ? 'POST' : 'GET',
+      headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
+      body: visitorId ? JSON.stringify({ visitorId }) : undefined
     });
     if (!response.ok) return;
     const data = await response.json();
     if (!Number.isFinite(data.count)) return;
     visitCount.textContent = new Intl.NumberFormat().format(data.count);
     visitDisplay.hidden = false;
-    if (!countedThisSession) {
-      try { sessionStorage.setItem('portfolio-visit-counted', '1'); } catch {}
-    }
   } catch {}
 }
 

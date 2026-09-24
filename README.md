@@ -39,4 +39,4 @@ UPSTASH_REDIS_REST_URL
 UPSTASH_REDIS_REST_TOKEN
 ```
 
-The browser increments the total once per tab session and reads the current total on later page loads in that session. If storage is unavailable or unconfigured, the sidebar hides the counter instead of displaying stale data.
+The browser creates an anonymous ID that is shared across tabs and retained in that browser profile. Redis records each ID once, so opening more tabs or returning later from the same browser does not increment the total again. Clearing site data, using a private window, another browser profile, or another device creates a new anonymous visitor because the portfolio does not require users to sign in. If storage is unavailable or unconfigured, the sidebar hides the counter instead of displaying stale data.
