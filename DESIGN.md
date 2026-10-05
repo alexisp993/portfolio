@@ -1,18 +1,27 @@
 # Design direction
 
-Dark botanical editorial portfolio inspired by the supplied mock-up. The experience mode is showcase: the work leads, navigation stays quiet, and project imagery carries the storytelling.
+Warm editorial data portfolio, with the work and real project screenshots leading. The experience mode is showcase: visitors should quickly understand Alex's analytics focus and open a project.
 
-A cinematic analytics portfolio anchored by a personal navigation rail. The Home view follows the reference composition in three horizontal bands: a half-screen project-story banner, a compact three-card Featured Projects row, and a narrow toolkit marquee.
+## Color tokens
 
-## Tokens
+- Canvas: `#F4F2E9` (warm ivory)
+- Surface: `#FBFAF5` (cards and panels)
+- Sidebar and primary text: `#172621` (deep green)
+- Secondary green: `#315F47`
+- Body copy: `#42554B`
+- Mint accent: `#74CFAE`, used sparingly for highlights and active states
+- Soft separators: `rgba(23, 38, 33, .12)`
 
-- Deep: #172621; Moss: #2A4038; Leaf: #3B593F; Accent: #4D734C; Ink: #0D0D0D.
-- Local system sans typography, oversized editorial headings, thin botanical lines, restrained rounded cards.
+The default theme is light, framed by a dark-green navigation rail. Keep the existing dark theme available through the theme control. Use high-contrast green buttons and dark text on mint surfaces. Do not use botanical artwork, leaves, or plant photographs.
 
-## Behavior
+## Composition
 
-Five hash-addressable views retain browser history and direct links. Navigation collapses on desktop and becomes a mobile drawer. The hero rotates real project screenshots with vignette, green tint, keyboard controls, pause on hover/focus/hidden, and reduced-motion support.
+The Home view stays in three horizontal bands: a compact upper-half hero with the project-story slideshow, the headline and tagline, calls to action and three accurate summary counts; a row of three featured project cards; and a narrow toolkit marquee. Preserve the left navigation structure, existing views, project drawer, and mobile menu. Inner pages reuse ivory backgrounds, near-white panels, dark-green headings, and mint accents.
 
-## Content and assets
+## Imagery and motion
 
-Portrait origin: user file C:/Users/Personal/Documents/Profile yellow BG.png. Résumé origin: user file C:/Users/Personal/Documents/Alex Pagtakhan - Data Analyst.pdf. Do not alter these originals. Project screenshots retain recognizable source color beneath a restrained edge vignette. Use consistent stroke SVG icons throughout.
+Use Alex's supplied portrait and actual project screenshots unchanged. Preserve screenshots' natural colors; do not apply green tint or global saturation filters. The project-story carousel retains a restrained edge vignette for caption contrast. Keep the subtle pointer-reactive dot field and theme-switch reveal animation, recolored for the active theme. Respect reduced-motion preferences.
+
+## Content and evidence
+
+Use the confirmed five years of experience and keep the project count tied to the rendered portfolio projects. Keep the displayed tool count aligned with the tools and platforms represented in the portfolio. Do not invent clients, project outcomes, metrics, certifications, or testimonials. Clearly mark demonstration data where applicable.

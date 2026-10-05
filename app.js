@@ -60,7 +60,7 @@ function applyTheme(theme, persist = true) {
   themeButton?.setAttribute('aria-pressed', String(isLight));
   themeButton?.setAttribute('aria-label', `Switch to ${isLight ? 'dark' : 'light'} mode`);
   if (themeLabel) themeLabel.textContent = `${isLight ? 'Dark' : 'Light'} mode`;
-  themeColor?.setAttribute('content', isLight ? '#edf2e9' : '#172621');
+  themeColor?.setAttribute('content', isLight ? '#F4F2E9' : '#172621');
   if (persist) {
     try { localStorage.setItem('portfolio-theme', isLight ? 'light' : 'dark'); } catch {}
   }
@@ -307,6 +307,7 @@ function drawFractalBackground(time) {
   if (!fractalCanvas || !fractalContext) return;
   const width = fractalCanvas.clientWidth;
   const height = fractalCanvas.clientHeight;
+  const isLight = document.documentElement.dataset.theme === 'light';
   const spacing = innerWidth < 700 ? 38 : 30;
   const radius = 190;
   const localMouseX = fractalMouse.x - fractalCanvas.getBoundingClientRect().left;
@@ -327,8 +328,10 @@ function drawFractalBackground(time) {
       fractalContext.beginPath();
       fractalContext.arc(dotX, dotY, dotRadius, 0, Math.PI * 2);
       fractalContext.fillStyle = strength > .02
-        ? `rgba(121, 221, 176, ${.2 + strength * .52})`
-        : 'rgba(115, 174, 126, .2)';
+        ? isLight
+          ? `rgba(59, 123, 90, ${.12 + strength * .36})`
+          : `rgba(121, 221, 176, ${.2 + strength * .52})`
+        : isLight ? 'rgba(59, 95, 71, .22)' : 'rgba(115, 174, 126, .2)';
       fractalContext.fill();
     }
   }
