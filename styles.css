@@ -370,9 +370,9 @@ html[data-theme="light"] .hero-copy .eyebrow { color: #3b7b5a; }
 html[data-theme="light"] .hero-copy h1 em { color: #3b7b5a; }
 html[data-theme="light"] .tagline { color: #243b2f; }
 html[data-theme="light"] .hero-slider { background: #e8e5dc; }
-html[data-theme="light"] .hero-slider::before { background: linear-gradient(90deg, #f4f2e9 0%, rgba(244,242,233,.72) 12%, rgba(244,242,233,0) 36%), radial-gradient(ellipse at 58% 44%, transparent 48%, rgba(23,38,33,.24) 100%); }
+html[data-theme="light"] .hero-slider::before { background: linear-gradient(90deg, #f4f2e9 0%, rgba(244,242,233,.72) 12%, rgba(244,242,233,0) 36%), linear-gradient(0deg, rgba(8,20,15,.68) 0%, rgba(8,20,15,.28) 20%, transparent 46%), radial-gradient(ellipse at 58% 44%, transparent 48%, rgba(23,38,33,.24) 100%); }
 html[data-theme="light"] .slide img { filter: none; }
-html[data-theme="light"] .slide figcaption { padding: 9px 13px; border-radius: 8px; background: rgba(23,38,33,.78); color: #fff; }
+html[data-theme="light"] .slide figcaption { right: 58px; bottom: 32px; max-width: min(380px, calc(100% - 90px)); padding: 0; border-radius: 0; background: transparent; color: #fff; }
 html[data-theme="light"] .slider-nav button { color: #42554b; }
 html[data-theme="light"] .slider-nav button[aria-current="true"] { color: #172621; }
 html[data-theme="light"] .slider-nav button[aria-current="true"]::after { background: #3b7b5a; }
