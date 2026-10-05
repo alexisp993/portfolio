@@ -11,6 +11,7 @@ Alex Pagtakhan is a Manila-based Microsoft Certified Power BI Data Analyst with 
 ## Evidence
 
 - [FreshBites Power BI case study](https://alex-analytics-portfolio.vercel.app/projects/freshbites-power-bi/): Restaurant profitability analysis covering net sales, gross margin, food cost, discounts, labor, waste, and branch performance.
+- [Sleep Health & Lifestyle Analysis](https://alex-analytics-portfolio.vercel.app/projects/sleep-health-analysis/): DataCamp guided Python and pandas exercise comparing sleep averages by occupation and insomnia shares across BMI categories, with sample-size limitations stated.
 - [LinkedIn](https://www.linkedin.com/in/alexispagtakhan/)
 - [GitHub](https://github.com/alexisp993)
 

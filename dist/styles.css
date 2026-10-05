@@ -326,6 +326,8 @@ main { min-height: 100vh; margin-left: var(--rail); }
 .detail-model h2 { margin: 4px 0 10px; font-size: 24px; line-height: 1.1; }
 .detail-model p:not(.eyebrow) { margin: 0; color: #405047; font-size: 13px; line-height: 1.65; }
 .detail-model img { display: block; width: 100%; border: 7px solid #ebe8df; border-radius: 12px; background: #f4f2e9; }
+[data-project-detail="sleep-health"] .detail-model { grid-template-columns: 1fr; }
+[data-project-detail="sleep-health"] .detail-model .archive-link { color: #167851; text-decoration: none; }
 
 .loader { position: fixed; z-index: 100; inset: 0; display: grid; place-content: center; justify-items: center; background: var(--deep); transition: opacity .45s var(--ease-out), visibility .45s; }
 .loader.is-done { opacity: 0; visibility: hidden; }

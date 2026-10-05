@@ -159,7 +159,7 @@ const slider = document.querySelector('.hero-slider');
 const slides = [...document.querySelectorAll('[data-project-slide]')];
 const slideButtons = [...document.querySelectorAll('[data-slide]')];
 const slideStatus = document.querySelector('[data-slide-status]');
-const slideNames = ['FreshBites Performance Analysis', 'book-tracker', 'Ma, Anong Ulam'];
+const slideNames = ['FreshBites Performance Analysis', 'book-tracker', 'Ma, Anong Ulam', 'Sleep Health & Lifestyle Analysis'];
 let currentSlide = 0;
 let slideTimer;
 
