@@ -27,4 +27,4 @@ Install Python with pandas and Jupyter, then open `sleep-health-analysis.ipynb` 
 
 ## Portfolio case study
 
-The online case study presents all three Python analysis cells in expandable code sections, so visitors can read or copy them without opening GitHub. It also links directly to download the notebook and dataset.
+The online case study presents all three Python analysis cells in expandable code sections, so visitors can read or copy them without opening GitHub.
