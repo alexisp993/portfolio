@@ -24,3 +24,7 @@ These are descriptive patterns in the supplied anonymized sample. They do not es
 ## Run the notebook
 
 Install Python with pandas and Jupyter, then open `sleep-health-analysis.ipynb` from this folder. The notebook reads `sleep_health_data.csv` from the same directory.
+
+## Portfolio case study
+
+The online case study presents all three Python analysis cells in expandable code sections, so visitors can read or copy them without opening GitHub. It also links directly to download the notebook and dataset.
